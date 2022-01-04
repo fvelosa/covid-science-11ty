@@ -1,5 +1,6 @@
 ---
 permalink: /links/
+templateClass: content
 eleventyNavigation:
   key: Links
   order: 2
@@ -9,5 +10,5 @@ layout: layouts/home.njk
 
 {% for link in links %}
   {% set linkUrl %}{{ link.url }}/{% endset %}
-  <p> <a href="{{ linkUrl }}">{{ link.title }}</a> <p/>
+  <h4> <a href="{{ linkUrl }}">{{ link.title }}</a> <h4/>
 {% endfor %}

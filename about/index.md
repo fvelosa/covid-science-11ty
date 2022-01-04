@@ -3,8 +3,6 @@ layout: layouts/post.njk
 title: About Me
 templateClass: tmpl-post
 eleventyNavigation:
-  key: About Me
-  order: 3
+  key: About ME
+  order: 4
 ---
-
-I am a person that writes stuff.
