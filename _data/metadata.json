@@ -1,10 +1,10 @@
 {
-  "title": "Your Blog Name",
+  "title": "Covid science",
   "url": "https://example.com/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Covid science sources",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Covid science sources.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://example.com/"
@@ -14,7 +14,7 @@
     "url": "https://example.com/feed/feed.json"
   },
   "author": {
-    "name": "Your Name Here",
+    "name": "Interested citizen",
     "email": "youremailaddress@example.com",
     "url": "https://example.com/about-me/"
   }

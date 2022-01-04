@@ -10,7 +10,25 @@ templateClass: tmpl-post
 <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
 {%- endfor %}
 
+<br/>
+
 {{ content | safe }}
+
+{%- if assetId and mediaType == 'spotify' %}
+<iframe src="https://open.spotify.com/embed/episode/{{ assetId }}?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+{%- endif %}
+
+{%- if assetId and mediaType == 'youtube' %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ assetId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{%- endif %}
+
+{%- if assetId and mediaType == 'odysee' %}
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/{{assetId}}" allowfullscreen></iframe>
+{%- endif %}
+
+<br/>
+
+<span> {{ description }} <span/>
 
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}

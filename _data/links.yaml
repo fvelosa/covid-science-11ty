@@ -1,0 +1,54 @@
+-
+  type: news media
+  title: Pagina Um
+  url: https://paginaum.pt
+  tags:
+    - pagina um
+    - portugal
+-
+  type: NGO
+  title: World Council for Health
+  url: https://worldcouncilforhealth.org
+  tags:
+    - world council for health
+    - Tess Lawrie
+-
+  type: Author
+  title: Voice For Science and Solidarity
+  url: https://www.voiceforscienceandsolidarity.org/
+  tags:
+    - Geert Vanden Bossche
+    - covid-19 hero
+-
+  type: Paper
+  title: WCH - Early COVID-19 Treatment Guidelines
+  url: https://worldcouncilforhealth.org/wp-content/uploads/2021/09/WCH-At-Home-Treatment-Guide_30-Sept-2021.pdf
+  tags:
+    - early-treatment
+    - world council for health
+    - Tess Lawrie
+-
+  type: Paper
+  title: "NIH - False positive rapid antigen tests for SARS-CoV-2 in the real-world and their economic burden"
+  url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8372488
+  tags:
+    - covid-19 tests
+    - nih
+    - false positives
+-
+  type: Paper
+  title: "The Lancet - Prevention of SARS-CoV-2 transmission during a large, live, indoor gathering (SPRING): a non-inferiority, randomised, controlled trial"
+  Findings: "Participation in a large, indoor, live gathering without physical distancing was not associated with increased SARS-CoV-2–transmission risk, provided a comprehensive preventive intervention was implemented."
+  url: https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(21)00673-3/fulltext?fbclid=IwAR3vYSziWyEyGTQ-VjwvcUws15XjT9ppmNnDFhWMl1fGMSzORhYc2GuhMvU#seccestitle210
+  tags:
+    - covid-19 tests
+    - nih
+    - false positives
+-
+  type: Author
+  title: Vladimir Zelenko
+  url: https://vladimirzelenkomd.com/
+  tags:
+    - Vladimir Zelenko
+    - early treatment
+    - covid-19 hero

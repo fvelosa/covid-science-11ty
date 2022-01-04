@@ -1,0 +1,13 @@
+---
+permalink: /links/
+eleventyNavigation:
+  key: Links
+  order: 2
+layout: layouts/home.njk
+---
+<h1>Links</h1>
+
+{% for link in links %}
+  {% set linkUrl %}{{ link.url }}/{% endset %}
+  <p> <a href="{{ linkUrl }}">{{ link.title }}</a> <p/>
+{% endfor %}
