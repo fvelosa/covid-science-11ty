@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-post
+templateClass: container content
 ---
 <h1>{{ title }}</h1>
 
@@ -15,20 +15,29 @@ templateClass: tmpl-post
 {{ content | safe }}
 
 {%- if assetId and mediaType == 'spotify' %}
-<iframe src="https://open.spotify.com/embed/episode/{{ assetId }}?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe src="https://open.spotify.com/embed/episode/{{ assetId }}?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="{{mediaType}}-player"></iframe>
 {%- endif %}
 
 {%- if assetId and mediaType == 'youtube' %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ assetId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ assetId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="{{mediaType}}-player"></iframe>
 {%- endif %}
 
 {%- if assetId and mediaType == 'odysee' %}
-<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/{{assetId}}" allowfullscreen></iframe>
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/{{assetId}}" allowfullscreen id="{{mediaType}}-player"></iframe>
+{%- endif %}
+
+{%- if assetId and mediaType == 'rumble' %}
+<iframe class="rumble" width="640" height="360" src="https://rumble.com/embed/{{assetId}}" frameborder="0" allowfullscreen></iframe>
 {%- endif %}
 
 <br/>
 
 <span> {{ description }} <span/>
+
+<br/>
+{%- for timestamp in timestamps -%}
+<p> <a href="?t={{timestamp[0]}}">{{timestamp[1]}} - {{ timestamp[2] }} <a/><p/>
+{%- endfor %}
 
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
@@ -41,3 +50,20 @@ templateClass: tmpl-post
 </ul>
 {%- endif %}
 {%- endif %}
+
+<script>
+  var param = /[&?]t=([^&]+)/.exec(location.search);
+  param = param ? param[1].replace(/"/g, '&quot;') : '';
+  if (param) {
+    {%- if mediaType == 'spotify' %}
+    {%- endif %}
+
+    {%- if mediaType == 'youtube' %}
+    document.getElementById("{{mediaType}}-player").src = `https://www.youtube.com/embed/{{ assetId }}?start=${param}&autoplay=1&mute=0&enablejsapi=1&showinfo=0`;
+    {%- endif %}
+
+    {%- if mediaType == 'odysee' %}
+    {%- endif %}
+  }
+  {# document.write(`<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ assetId }}?start=${param}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`); #}
+</script>

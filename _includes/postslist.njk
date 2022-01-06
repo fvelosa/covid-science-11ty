@@ -24,6 +24,9 @@
       {%- if post.data.assetId and post.data.mediaType == 'odysee' %}
         <iframe id="odysee-iframe" width="100%" height="232" src="https://odysee.com/$/embed/{{ post.data.assetId }}" allowfullscreen></iframe>
       {%- endif %}
+      {%- if post.data.assetId and post.data.mediaType == 'rumble' %}
+      <iframe class="rumble" width="100%" height="232" src="https://rumble.com/embed/{{ post.data.assetId }}" frameborder="0" allowfullscreen></iframe>
+      {%- endif %}
       <a href="{{ post.url | url }}" class="">
         {% if post.data.title %}
           {{ post.data.title }}
