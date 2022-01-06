@@ -1,0 +1,16 @@
+---
+permalink: /authors/
+templateClass: container content
+eleventyNavigation:
+  key: Authors
+  order: 3
+layout: layouts/home.njk
+---
+
+<h1>Authors</h1>
+
+{% for author in collections.authorList | sort(0, 0, author) %}
+  {% set authorUrl %}/authors/{{ author | slug }}/{% endset %}
+  {# <span class="author is-info">{{ author }}<span/> #}
+  <div><a href="{{ authorUrl | url }}" class="post-author">{{ author }}</a><div/>
+{% endfor %}

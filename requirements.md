@@ -1,0 +1,8 @@
+- authors
+- groupBy topic
+- document type
+- heroes and vilans
+- resources
+  - logos
+  - images
+  - group by resource type

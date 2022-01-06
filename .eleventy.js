@@ -64,6 +64,16 @@ module.exports = function(eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
+  // Create an array of all authors
+  eleventyConfig.addCollection("authorList", function(collection) {
+    let authorSet = new Set();
+    collection.getAll().forEach(item => {
+      (item.data.authors || []).forEach(author => authorSet.add(author));
+    });
+
+    return Array.from(authorSet);
+  });
+
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");

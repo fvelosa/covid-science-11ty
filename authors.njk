@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: author
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - authorList
+  addAllPagesToCollections: true
+layout: layouts/home.njk
+eleventyComputed:
+  title: Author “{{ author }}”
+permalink: /authors/{{ author | slug }}/
+---
+<h1>Author “{{ author }}”</h1>
+
+{% set postslist = collections[ author ] %}
+{% include "postslist.njk" %}
+
+<p>See <a href="{{ '/authors/' | url }}">all authors</a>.</p>
