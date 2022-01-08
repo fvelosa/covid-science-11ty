@@ -43,6 +43,12 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // Return all elements that contain at least one tag
+  eleventyConfig.addFilter("filterTags", (array, tags = []) => {
+    if(!Array.isArray(array)) return array
+    return array.filter(item => tags.some(tag => item.data.tags.includes(tag)))
+  });
+
   // Return the smallest number argument
   eleventyConfig.addFilter("min", (...numbers) => {
     return Math.min.apply(null, numbers);
@@ -53,6 +59,8 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
+
+  eleventyConfig.addFilter("stringify", o => Object.keys(o))
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
@@ -66,6 +74,28 @@ module.exports = function(eleventyConfig) {
 
   // Create an array of all authors
   eleventyConfig.addCollection("authorList", function(collection) {
+    // console.log(collection);
+
+    let authorSet = new Set();
+    collection.getAll().forEach(item => {
+      (item.data.authors || []).forEach(author => authorSet.add(author));
+    });
+
+    return Array.from(authorSet);
+  });
+
+  // Create an array of posts by topic
+  eleventyConfig.addCollection("topicsList", function(collection) {
+    // console.log('this =>', collection.getAll().map(i => i.data.title || i.template.inputPath));
+    console.log('this =>', collection.getAll().filter(i => i.template)[0].data.collections);
+    // console.log('this keys =>', Object.keys(collection));
+    // console.log('this authors =>', collection.items[0].data.topics);
+    // console.log(collection);
+
+    const topics = collection.items[0].data.topics;
+
+    topics.forEach(topic => topic.posts = collection.getAll())
+
     let authorSet = new Set();
     collection.getAll().forEach(item => {
       (item.data.authors || []).forEach(author => authorSet.add(author));

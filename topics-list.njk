@@ -1,0 +1,32 @@
+---
+permalink: /topics/
+templateClass: container content
+eleventyNavigation:
+  key: Topics
+  order: 4
+layout: layouts/home.njk
+---
+
+<h1>Topics</h1>
+
+{# {{ topics }} #}
+
+{% for topic in topics | sort(0, 0, 'name') %}
+  {% set topicUrl %}/topics/{{ topic.name | slug }}/{% endset %}
+  <h5> <a href="{{ topicUrl | url }}">{{topic.name}}</a></h5>
+  <h5> {{topic.tags}} </h5>
+
+    {# <span class="tag is-info">{{ tag }}<span/> #}
+    <div><a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a><div/>
+
+  {% set postslist = collections.posts | filterTags(topic.tags) | head(-3) %}
+  {% set postslistCounter = collections.posts | filterTags(topic.tags) | length %}
+
+  {{ postslist }}
+  {{ postslistCounter }}
+
+  {% include "postslist.njk" %}
+
+  {# {% set authorUrl %}/authors/{{ author | slug }}/{% endset %}
+  <div><a href="{{ authorUrl | url }}" class="post-author">{{ author }}</a><div/> #}
+{% endfor %}

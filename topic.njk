@@ -1,0 +1,21 @@
+---
+pagination:
+  data: topics
+  size: 1
+  alias: topic
+  addAllPagesToCollections: true
+layout: layouts/home.njk
+eleventyComputed:
+  title: Topic “{{ topic.name }}”
+permalink: /topics/{{ topic.name | slug  }}/
+---
+<h1>Topics “{{ topic.name }}”</h1>
+
+{% set postslist = collections.posts | filterTags(topic.tags) %}
+{% set postslistCounter = collections.posts | filterTags(topic.tags) | length %}
+
+{{ postslist }}
+{{ postslistCounter }}
+
+{% include "postslist.njk" %}
+

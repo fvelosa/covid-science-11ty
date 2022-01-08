@@ -3,12 +3,6 @@ pagination:
   data: collections
   size: 1
   alias: author
-  filter:
-    - all
-    - nav
-    - post
-    - posts
-    - authorList
   addAllPagesToCollections: true
 layout: layouts/home.njk
 eleventyComputed:
@@ -19,5 +13,8 @@ permalink: /authors/{{ author | slug }}/
 
 {% set postslist = collections[ author ] %}
 {% include "postslist.njk" %}
+
+{% set d = postslist[0] %}
+<p>Test: {{ collections | stringify  }} </p>
 
 <p>See <a href="{{ '/authors/' | url }}">all authors</a>.</p>

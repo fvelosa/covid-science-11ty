@@ -1,16 +1,41 @@
--
-   name: Child vaccination
--
-   name: Vaccine safety
--
-   name: Vaccine mandates
--
-   name: Lockdowns and non medical interventions (NMIs)
--
-   name: Mass formation and psicology
--
-   name: Freedom, mandates and constitutional rights
--
-   name: Politics and goverment corruption
--
-   name: Virus origins
+- name: Child vaccination
+  question: Should I vaccinate my children?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+    - child vaccination
+    - vaccine
+- name: Vaccine safety
+  question: Should I take the vaccine? is it safe?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+- name: Vaccine mandates
+  question: Are vaccinate mandates effective? are they ethical?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+- name: Lockdowns and non medical interventions (NMIs)
+  question: Do non medical interventions work? are they worth their social cost?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+- name: Mass formation and psicology
+  question: Are we behaving in a rational and informed way? Can we repeat pass mistakes?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+- name: Freedom and constitutional rights
+  question: Do goverment restrictions risk our present and future freedoms?
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+- name: Politics and goverment corruption
+  question: Can I trust the goverment? Do they have our best interests in mind?
+  tags:
+    - political thyrany
+- name: Virus origins
+  question: Where did the virus come from? Can it happen again?
+  tags:
+    - virus origins
+    - wuhan lab
