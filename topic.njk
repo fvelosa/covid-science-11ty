@@ -9,13 +9,22 @@ eleventyComputed:
   title: Topic “{{ topic.name }}”
 permalink: /topics/{{ topic.name | slug  }}/
 ---
-<h1>Topics “{{ topic.name }}”</h1>
+
+{% set topicUrl %}/topics/{{ topic.name | slug }}/{% endset %}
+<h4> <a href="{{ topicUrl | url }}">{{topic.name}} - {{ topic.question}}</a></h4>
+{% set tagList = topic.tags %}
+{% include "taglist.njk" %}
+
+<h2>Podcasts</h2>
 
 {% set postslist = collections.posts | filterTags(topic.tags) %}
 {% set postslistCounter = collections.posts | filterTags(topic.tags) | length %}
 
-{{ postslist }}
-{{ postslistCounter }}
-
 {% include "postslist.njk" %}
 
+<h2>Media Clips</h2>
+
+{% set postslist = collections.clipsList | filterTags(topic.tags) %}
+{% set postslistCounter = collections.clipsList | filterTags(topic.tags) | length %}
+
+{% include "postslist.njk" %}

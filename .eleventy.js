@@ -6,8 +6,9 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const yaml = require("js-yaml");
+const { timeStamp } = require('console');
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -23,20 +24,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("dd LLL yyyy");
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
+    if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
-    if( n < 0 ) {
+    if (n < 0) {
       return array.slice(n);
     }
 
@@ -45,7 +46,7 @@ module.exports = function(eleventyConfig) {
 
   // Return all elements that contain at least one tag
   eleventyConfig.addFilter("filterTags", (array, tags = []) => {
-    if(!Array.isArray(array)) return array
+    if (!Array.isArray(array)) return array
     return array.filter(item => tags.some(tag => item.data.tags.includes(tag)))
   });
 
@@ -62,18 +63,32 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("stringify", o => Object.keys(o))
 
+  // filters a collection by slug
+  eleventyConfig.addFilter("getBySlug", function (collection, slug) {
+    return collection.find(item => item.slug === slug);
+  })
+
+  // get a document attribute
+  eleventyConfig.addFilter("jsonPath", function (obj, path) {
+    return obj || obj[path];
+  })
+
   // Create an array of all tags
-  eleventyConfig.addCollection("tagList", function(collection) {
+  eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = new Set();
     collection.getAll().forEach(item => {
       (item.data.tags || []).forEach(tag => tagSet.add(tag));
+      (item.data.timestamps || []).forEach(timestamp => (timestamp[3] || []).forEach(tag => tagSet.add(tag)))
+    });
+    collection.getAll().forEach(item => {
+      (item.data.authors || []).forEach(tag => tagSet.add(tag));
     });
 
     return filterTagList([...tagSet]);
   });
 
   // Create an array of all authors
-  eleventyConfig.addCollection("authorList", function(collection) {
+  eleventyConfig.addCollection("authorList", function (collection) {
     // console.log(collection);
 
     let authorSet = new Set();
@@ -84,24 +99,39 @@ module.exports = function(eleventyConfig) {
     return Array.from(authorSet);
   });
 
-  // Create an array of posts by topic
-  eleventyConfig.addCollection("topicsList", function(collection) {
-    // console.log('this =>', collection.getAll().map(i => i.data.title || i.template.inputPath));
-    console.log('this =>', collection.getAll().filter(i => i.template)[0].data.collections);
-    // console.log('this keys =>', Object.keys(collection));
-    // console.log('this authors =>', collection.items[0].data.topics);
-    // console.log(collection);
+  // Create an array of all authors
+  eleventyConfig.addCollection("linksList", function (collection) {
+    const links = collection.getAll()[0].data.links
 
-    const topics = collection.items[0].data.topics;
+    let linkSet = new Set();
 
-    topics.forEach(topic => topic.posts = collection.getAll())
-
-    let authorSet = new Set();
-    collection.getAll().forEach(item => {
-      (item.data.authors || []).forEach(author => authorSet.add(author));
+    (links || []).forEach(link => {
+      linkSet.add(link);
     });
 
-    return Array.from(authorSet);
+    return Array.from(linkSet);
+  });
+
+  // Create an array of posts by topic
+  eleventyConfig.addCollection("clipsList", function (collection) {
+    let clipsSet = new Set();
+
+    collection.getAll().forEach(item => {
+      (item.data.timestamps || []).forEach(timestamp => {
+        clipsSet.add({ data: { ...item.data, originalTitle: item.data.title, originalTags: item.data.tags, tags: timestamp[3] || item.data.tags, title: timestamp[2], start: timestamp[0] } })
+      })
+    });
+
+    console.log(clipsSet.length);
+
+    console.log('length =========>', collection.getAll()[0].data)
+    console.log('length =========>', collection.getAll()[0].data.collections.all.length)
+    console.log('length =========>', collection.getAll()[0].data.collections.posts.length)
+    console.log('length =========>', collection.getAll()[0].data.links.length)
+    console.log('length =========>', Array.from(clipsSet).length)
+    console.log('length =========>', collection.getAll())
+
+    return Array.from(clipsSet);
   });
 
   // Copy the `img` and `css` folders to the output
@@ -118,7 +148,7 @@ module.exports = function(eleventyConfig) {
       placement: "after",
       class: "direct-link",
       symbol: "#",
-      level: [1,2,3,4],
+      level: [1, 2, 3, 4],
     }),
     slugify: eleventyConfig.getFilter("slug")
   });
@@ -127,12 +157,12 @@ module.exports = function(eleventyConfig) {
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('_site/404.html');
 
         browserSync.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
-          res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
+          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
           res.write(content_404);
           res.end();
         });

@@ -1,0 +1,6 @@
+<div class="tags">
+  {% for tag in tagList | sort(0, 0, tag) %}
+    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="tag is-medium">{{ tag | lower}}</a>
+  {% endfor %}
+<div/>

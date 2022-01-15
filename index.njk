@@ -4,9 +4,22 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<br/>
+
+<section class="heros">
+    {% set assetId = "IPhKC4EBVA2U" %}
+
+    {% set asset = collections.posts | getBySlug(assetId) |  jsonPath('data') %}
+
+    {% set height = 500 %}
+    {% include "video-media.njk" %}
+</section>
+<h1 class="is-size-3">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+
 {% set maxPosts = collections.posts.length | min(9) %}
 <h1 class="is-size-3">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
+{% set height = undefined %}
 {% set postslist = collections.posts | head(-maxPosts) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}

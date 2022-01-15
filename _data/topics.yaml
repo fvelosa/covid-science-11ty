@@ -1,41 +1,53 @@
-- name: Child vaccination
+-
+  name: Child vaccination
   question: Should I vaccinate my children?
   tags:
     - vaccine adverse events
     - vaccine safety
     - child vaccination
-    - vaccine
-- name: Vaccine safety
+-
+  name: Vaccine safety
   question: Should I take the vaccine? is it safe?
   tags:
     - vaccine adverse events
     - vaccine safety
-- name: Vaccine mandates
-  question: Are vaccinate mandates effective? are they ethical?
+-
+  name: Vaccine mandates
+  question: Are vaccine mandates effective? are they ethical?
+  tags:
+    - vaccine mandates
+-
+  name: Lockdowns and non-medical interventions (NMIs)
+  question: Do non-medical interventions work? are they worth their social cost?
+  tags:
+    - face masks
+    - non-medical interventions
+    - lockdowns
+-
+  name: Mass formation and psychology
+  question: Are we behaving in a rational and informed way? Can we repeat past mistakes?
   tags:
     - vaccine adverse events
     - vaccine safety
-- name: Lockdowns and non medical interventions (NMIs)
-  question: Do non medical interventions work? are they worth their social cost?
+-
+  name: Freedom and constitutional rights
+  question: Do government restrictions risk our present and future freedoms?
   tags:
-    - vaccine adverse events
-    - vaccine safety
-- name: Mass formation and psicology
-  question: Are we behaving in a rational and informed way? Can we repeat pass mistakes?
+    - vaccine mandates
+-
+  name: Politics and government corruption
+  question: Can I trust the government? Do they have our best interests in mind?
   tags:
-    - vaccine adverse events
-    - vaccine safety
-- name: Freedom and constitutional rights
-  question: Do goverment restrictions risk our present and future freedoms?
-  tags:
-    - vaccine adverse events
-    - vaccine safety
-- name: Politics and goverment corruption
-  question: Can I trust the goverment? Do they have our best interests in mind?
-  tags:
-    - political thyrany
-- name: Virus origins
+    - political tyranny
+-
+  name: Virus origins
   question: Where did the virus come from? Can it happen again?
   tags:
     - virus origins
     - wuhan lab
+-
+  name: Science corruption
+  question: Is there a single scientific truth? Can we trust science?
+  tags:
+    - trust the science
+

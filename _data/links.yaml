@@ -1,4 +1,5 @@
 -
+  id: rR0fPhwf
   type: news media
   title: Pagina Um
   url: https://paginaum.pt
@@ -6,6 +7,7 @@
     - pagina um
     - portugal
 -
+  id: nArR0lkz
   type: NGO
   title: World Council for Health
   url: https://worldcouncilforhealth.org
@@ -13,6 +15,7 @@
     - world council for health
     - Tess Lawrie
 -
+  id: 9fw7fggq
   type: Author
   title: Voice For Science and Solidarity
   url: https://www.voiceforscienceandsolidarity.org/
@@ -20,6 +23,7 @@
     - Geert Vanden Bossche
     - covid-19 hero
 -
+  id: gGp37Eqz
   type: Paper
   title: WCH - Early COVID-19 Treatment Guidelines
   url: https://worldcouncilforhealth.org/wp-content/uploads/2021/09/WCH-At-Home-Treatment-Guide_30-Sept-2021.pdf
@@ -28,6 +32,7 @@
     - world council for health
     - Tess Lawrie
 -
+  id: a6ZJmgM4
   type: Paper
   title: "NIH - False positive rapid antigen tests for SARS-CoV-2 in the real-world and their economic burden"
   url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8372488
@@ -36,6 +41,7 @@
     - nih
     - false positives
 -
+  id: HaI9TxB2
   type: Paper
   title: "The Lancet - Prevention of SARS-CoV-2 transmission during a large, live, indoor gathering (SPRING): a non-inferiority, randomised, controlled trial"
   Findings: "Participation in a large, indoor, live gathering without physical distancing was not associated with increased SARS-CoV-2–transmission risk, provided a comprehensive preventive intervention was implemented."
@@ -45,6 +51,7 @@
     - nih
     - false positives
 -
+  id: VV8AR3aV
   type: Author
   title: Vladimir Zelenko
   url: https://vladimirzelenkomd.com/
@@ -53,9 +60,30 @@
     - early treatment
     - covid-19 hero
 -
+  id: IJY8NcnN
   type: NGO
   title: The Unity Project
   url: https://unityprojectonline.com
-  tags:
+  authors:
     - Peter McCullough
+    - Robert Malone
+  tags:
+    - vaccine mandates
+    - child vaccination
+-
+  id: clySYUdy
+  type: NGO
+  title: Global Covid Summit
+  url: https://globalcovidsummit.org/
+  tags:
+    - child vaccination
+-
+  id: 0PiM5Bsw
+  type: NGO
+  title: Swiss Policy Research
+  url: https://swprs.org/
+  authors:
+    - Swiss Policy Research
+  tags:
+    - child vaccination
     - vaccine mandates

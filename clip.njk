@@ -1,0 +1,14 @@
+---
+pagination:
+  data: collections.clipsList
+  size: 1
+  alias: clip
+  addAllPagesToCollections: true
+layout: layouts/home.njk
+eleventyComputed:
+  title: Clip “{{ clip.data.title }}”
+permalink: /clips/{{ clip.data.id| slug }}/{{ clip.data.title | slug }}/
+---
+<h1>Author “{{ clip.data.title }}”</h1>
+
+<p>See <a href="{{ '/clips/' | url }}">all clips</a>.</p>

@@ -1,32 +1,8 @@
 <div class="columns is-multiline is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullh">
   {% for post in postslist | reverse %}
     <div class="column is-one-third-desktop is-half-tablet">
-      {%- if post.data.assetId and post.data.mediaType == 'spotify' %}
-        <iframe
-          src="https://open.spotify.com/embed/episode/{{ post.data.assetId }}?utm_source=generator"
-          width="100%"
-          height="232"
-          frameBorder="0"
-          allowfullscreen=""
-          allowtransparency="true"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-      {%- endif %}
-      {%- if post.data.assetId and post.data.mediaType == 'youtube' %}
-        <iframe
-          width="100%"
-          height="232"
-          src="https://www.youtube.com/embed/{{ post.data.assetId }}"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      {%- endif %}
-      {%- if post.data.assetId and post.data.mediaType == 'odysee' %}
-        <iframe id="odysee-iframe" width="100%" height="232" src="https://odysee.com/$/embed/{{ post.data.assetId }}" allowfullscreen></iframe>
-      {%- endif %}
-      {%- if post.data.assetId and post.data.mediaType == 'rumble' %}
-      <iframe class="rumble" width="100%" height="232" src="https://rumble.com/embed/{{ post.data.assetId }}" frameborder="0" allowfullscreen></iframe>
-      {%- endif %}
+      {% set asset = post.data %}
+      {% include "video-media.njk" %}
       <a href="{{ post.url | url }}" class="">
         {% if post.data.title %}
           {{ post.data.title }}
@@ -38,26 +14,7 @@
       <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
       {% for tag in post.data.tags | filterTagList %}
         {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-        {# <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a> #}
       {% endfor %}
     </div>
   {% endfor %}
 </div>
-{# <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-  {% for post in postslist | reverse %}
-    <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-      <a href="{{ post.url | url }}" class="postlist-link">
-        {% if post.data.title %}
-          {{ post.data.title }}
-        {% else %}
-          <code>{{ post.url }}</code>
-        {% endif %}
-      </a>
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      {% for tag in post.data.tags | filterTagList %}
-        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-      {% endfor %}
-    </li>
-  {% endfor %}
-</ol> #}

@@ -1,0 +1,23 @@
+---
+  title: "Tertulias da Junqueira | A Gestão da Pandemia e as crianças em 2021"
+  description: "A Plataforma Cidadania XXI realizou, no passado dia 2 de Agosto, uma Tertúlia cuja temática foi A Gestão da Pandemia e as Crianças em 2021, contando com a participação do Dr. António Ferreira e Dr. António Pedro Machado  - com a moderação de Elisabete Tavares. A tertúlia permitiu a reflexão sobre diversos aspectos da gestão sanitária em Portugal, assim como o recente debate sobre a vacinação em crianças e jovens.
+
+    # PELA GARANTIA DA LIBERDADE E DOS DIREITOS FUNDAMENTAIS
+    # PELO EQUILÍBRIO NAS MEDIDAS DE CONTROLO SANITÁRIO
+
+    Somos cidadãs e cidadãos, organizações, empresas e instituições portuguesas e defendemos a Ciência, a Saúde, a Vida, a Liberdade, a Democracia e a Constituição Portuguesa.
+
+    A Plataforma Cívica Cidadania XXI é um projecto independente e apartidário que procura garantir o debate, a pluralidade, o contraditório e a cidadania activa, abordando temas que interessam a todos - e para os quais a formação e expressão de opinião é fundamental. Conheça melhor a Cidadania XXI em https://www.cidadaniaxxi.eu, assine e partilhe o nosso manifesto.
+
+    A Plataforma é um dos projectos lançados pela Associação Momentum XXI, uma organização sem fins lucrativos cujo foco é a construção de uma sociedade civil activa e dinâmica. Apoie este projecto e faça parte da onda da cidadania activa em https://www.associacaoxxi.pt - a continuidade da nossa actividade depende de si!"
+  date: 2021-08-02
+  layout: layouts/post.njk
+  authors:
+    - Robert Malone
+    - Tertúlias da Junqueira
+  tags:
+    - portugal
+    - vaccine mandates
+  mediaType: youtube
+  assetId: BDxT8Mr7hmc
+---

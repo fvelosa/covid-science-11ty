@@ -1,0 +1,23 @@
+---
+permalink: /clips/
+templateClass: container content
+eleventyNavigation:
+  key: Clips
+  order: 4
+layout: layouts/home.njk
+---
+
+<h1>Clips</h1>
+
+{% for clip in collections.clipsList %}
+  {% set clipUrl %}/clips/{{ clip.data.title | slug }}/{% endset %}
+
+  <h5> <a href="{{ clipUrl | url }}">{{clip.data.title}}</a></h5>
+  <p>{{clip.data.originalTitle}}</p>
+  {% set tagList = clip.data.tags %}
+  {% include "taglist.njk" %}
+
+  <br/>
+
+  {% include "postslist.njk" %}
+{% endfor %}

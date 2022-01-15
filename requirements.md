@@ -25,3 +25,46 @@
   - Long COVID
 - Lists per tag and author, now they only work in sequence of posts
 - Improve performance https://www.npmjs.com/package/eleventy-plugin-youtube-embed and lite-youtube/embed
+
+
+```plantuml
+@startuml
+class Post {
+
+}
+
+class Podcast {
+
+}
+
+class News {
+
+}
+
+class Paper {
+
+}
+
+class NGO {
+
+}
+
+class Person {
+
+}
+
+class Tag {
+
+}
+
+class Clip {
+
+}
+
+Podcast -- Clip
+Podcast -- Tag
+Podcast -- Author
+Podcast -- Person
+
+@enduml
+```

@@ -1,0 +1,47 @@
+{% set mediaHeight = height or 232 %}
+{%- if asset.assetId and asset.mediaType == 'spotify' %}
+  <iframe
+    src="https://open.spotify.com/embed/episode/{{ asset.assetId }}?utm_source=generator"
+    width="100%"
+    height="{{ mediaHeight }}"
+    frameBorder="0"
+    allowfullscreen=""
+    allowtransparency="true"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+{%- endif %}
+{%- if asset.assetId and asset.mediaType == 'youtube' %}
+  <iframe
+    width="100%"
+    height="{{ mediaHeight }}"
+    src="https://www.youtube.com/embed/{{ asset.assetId }}"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+{%- endif %}
+{%- if asset.assetId and asset.mediaType == 'odysee' %}
+  <iframe
+    id="odysee-iframe"
+    width="100%"
+    height="{{ mediaHeight }}"
+    src="https://odysee.com/$/embed/{{ asset.assetId }}"
+    allowfullscreen></iframe>
+{%- endif %}
+{%- if asset.assetId and asset.mediaType == 'rumble' %}
+  <iframe
+    class="rumble"
+    width="100%"
+    height="{{ mediaHeight }}"
+    src="https://rumble.com/embed/{{ asset.assetId }}"
+    frameborder="0"
+    allowfullscreen></iframe>
+{%- endif %}
+{%- if asset.assetId and asset.mediaType == 'bitchute' %}
+  <iframe
+    width="100%"
+    height="{{ mediaHeight }}"
+    scrolling="no"
+    frameborder="0"
+    style="border: none;"
+    src="https://www.bitchute.com/embed/{{ asset.assetId }}/"></iframe>
+{%- endif %}
