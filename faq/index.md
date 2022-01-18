@@ -2,9 +2,9 @@
 layout: layouts/post.njk
 title: Frequently asked questions (FAQ)
 templateClass: container content
-eleventyNavigation:
-  key: FAQ
-  order: 3
+#eleventyNavigation:
+#  key: FAQ
+#  order: 3
 ---
 
 #### What are your main goals while building this website?

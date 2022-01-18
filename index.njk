@@ -6,15 +6,32 @@ eleventyNavigation:
 ---
 <br/>
 
-<section class="heros">
-    {% set assetId = "IPhKC4EBVA2U" %}
+<section style="width: 100%; position: relative; ">
+  <div style="padding-top: 66.6%;">
+    <div style="width: 100%; height: 100%; position: absolute; top:0; left: 0; right: 0">
+        {% set assetId = "IPhKC4EBVA2U" %}
 
-    {% set asset = collections.posts | getBySlug(assetId) |  jsonPath('data') %}
+        {% set asset = collections.posts | getById(assetId) |  jsonPath('data') %}
 
-    {% set height = 500 %}
-    {% include "video-media.njk" %}
+        {% set height = "90%" %}
+        {% include "video-media.njk" %}
+        <h5 class="has-text-centered">
+          <a href="{{ post.url | url }}" class="">
+          {% if asset.title %}
+            {{ asset.title }}
+          {% else %}
+            <code>{{ asset.url }}</code>
+          {% endif %}
+          </a>
+          <br/>
+          <time class="postlist-date" datetime="{{ asset.date | htmlDateString }}">{{ asset.date | readableDate }}</time>
+          {% for tag in asset.tags | filterTagList %}
+            {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          {% endfor %}
+        </h5>
+    </div>
+  </div>
 </section>
-<h1 class="is-size-3">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
 {% set maxPosts = collections.posts.length | min(9) %}
 <h1 class="is-size-3">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>

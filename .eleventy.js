@@ -64,13 +64,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("stringify", o => Object.keys(o))
 
   // filters a collection by slug
-  eleventyConfig.addFilter("getBySlug", function (collection, slug) {
-    return collection.find(item => item.slug === slug);
+  eleventyConfig.addFilter("getById", function (collection, id) {
+    console.log(collection)
+    return collection.find(item => item.data && item.data.assetId === id);
   })
 
   // get a document attribute
   eleventyConfig.addFilter("jsonPath", function (obj, path) {
-    return obj || obj[path];
+    return obj && obj[path];
   })
 
   // Create an array of all tags
@@ -89,8 +90,6 @@ module.exports = function (eleventyConfig) {
 
   // Create an array of all authors
   eleventyConfig.addCollection("authorList", function (collection) {
-    // console.log(collection);
-
     let authorSet = new Set();
     collection.getAll().forEach(item => {
       (item.data.authors || []).forEach(author => authorSet.add(author));
@@ -123,13 +122,6 @@ module.exports = function (eleventyConfig) {
     });
 
     console.log(clipsSet.length);
-
-    console.log('length =========>', collection.getAll()[0].data)
-    console.log('length =========>', collection.getAll()[0].data.collections.all.length)
-    console.log('length =========>', collection.getAll()[0].data.collections.posts.length)
-    console.log('length =========>', collection.getAll()[0].data.links.length)
-    console.log('length =========>', Array.from(clipsSet).length)
-    console.log('length =========>', collection.getAll())
 
     return Array.from(clipsSet);
   });

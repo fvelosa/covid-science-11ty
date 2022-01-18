@@ -4,9 +4,9 @@ pagination:
   size: 500
   alias: entries
 layout: layouts/home.njk
-eleventyNavigation:
-  key: Page List
-  order: 4
+#eleventyNavigation:
+#  key: Page List
+#  order: 4
 permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
 ---
 <table>
