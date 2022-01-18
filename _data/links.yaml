@@ -87,3 +87,95 @@
   tags:
     - child vaccination
     - vaccine mandates
+-
+  id: A37flxH2
+  type: paper
+  title: Differential Effects of Antiseptic Mouth Rinses on SARS-CoV-2 Infectivity In Vitro
+  date: 2021-03-01
+  description: "
+    Abstract
+    Severe acute respiratory syndrome-related coronavirus (SARS-CoV-2) is detectable in saliva from asymptomatic individuals, suggesting a potential benefit from the use of mouth rinses to suppress viral load and reduce virus spread. Published studies on the reduction of SARS-CoV-2-induced cytotoxic effects by mouth rinses do not exclude antiseptic mouth rinse-associated cytotoxicity. Here, we determined the effect of commercially available mouth rinses and antiseptic povidone-iodine on the infectivity of replication-competent SARS-CoV-2 viruses and of pseudotyped SARS-CoV-2 viruses. We first determined the effect of mouth rinses on cell viability to ensure that antiviral activity was not a consequence of mouth rinse-induced cytotoxicity. Colgate Peroxyl (hydrogen peroxide) exhibited the most cytotoxicity, followed by povidone-iodine, chlorhexidine gluconate (CHG), and Listerine (essential oils and alcohol). The potent antiviral activities of Colgate Peroxyl mouth rinse and povidone-iodine were the consequence of rinse-mediated cellular damage when the products were present during infection. The potency of CHG was greater when the product was not washed off after virus attachment, suggesting that the prolonged effect of mouth rinses on cells impacts the antiviral outcome. To minimalize mouth rinse-associated cytotoxicity, mouth rinse was largely removed from treated viruses by centrifugation prior to infection of cells. A 5% (v/v) dilution of Colgate Peroxyl or povidone-iodine completely blocked viral infectivity. A similar 5% (v/v) dilution of Listerine or CHG had a moderate suppressive effect on the virus, but a 50% (v/v) dilution of Listerine or CHG blocked viral infectivity completely. Mouth rinses inactivated the virus without prolonged incubation. The new infectivity assay, with limited impacts of mouth rinse-associated cytotoxicity, showed the differential effects of mouth rinses on SARS-CoV-2 infection. Our results indicate that mouth rinses can significantly reduce virus infectivity, suggesting a potential benefit for reducing SARS-CoV-2 spread."
+  url: https://www.mdpi.com/2076-0817/10/3/272
+  authors:
+    - Sonia Zuñiga
+    - mdpi
+    - pathogens
+  tags:
+    - therapeutics
+    - mouth rinses
+    - antiseptics
+-
+  id: Tz9O5nRk
+  type: news article
+  title: 2 Mouthwashes Disrupt the Coronavirus in Lab Tests
+  date: 2022-01-17
+  description: "
+    Two types of mouthwash disrupt SARS-CoV-2, the virus that causes COVID-19, preventing it from replicating in a human cell, a new study suggests.
+
+    The study in the journal Pathogens finds that, in a laboratory setting, Listerine and the prescription mouthwash Chlorhexidine disrupted the virus within seconds after researchers diluted it to concentrations that would mimic actual use.
+
+    Further studies are needed to test real-life efficacy in humans."
+  url: https://www.theepochtimes.com/2-mouthwashes-disrupt-the-coronavirus-in-lab-tests_4217951.html
+  authors:
+    - Sonia Zuñiga
+    - mdpi
+    - pathogens
+    - The Epoch Times
+  tags:
+    - therapeutics
+    - mouth rinses
+    - antiseptics
+-
+  id: F9v1B0KA
+  type: news article
+  title: It Is Time to Face Reality About the Vaccines
+  date: 2022-01-15
+  description: "
+    A number of studies are converging on the fact that 2 doses of vaccination has poor vaccine effectiveness against Omicron. 3 doses does slightly better, but the effect will rapidly wane as antibody titers fall, and infection is certain as the number of exposures increase. These studies have immediate implications for vaccine and health-care policies.
+
+    First, Kaiser Southern California. Here are data for 2 doses of mRNA for effectiveness against Omicron. Follow the red line. Over time, it is 0 percent."
+  url: https://www.theepochtimes.com/it-is-time-to-face-reality-about-the-vaccines_4215834.html
+  authors:
+    - Vinay Prasad
+    - The Epoch Times
+  tags:
+    - vaccine mandates
+    - political tyrany
+-
+  id: A6ZZEHlc
+  type: news article
+  title: "Waste of Time’ to Keep Vaccinating People: Ex-Head of UK Vaccine Taskforce"
+  date: 2022-01-16
+  description: "
+    It is a “waste of time” to keep vaccinating people against the CCP (Chinese Communist Party) virus, the former chairman of Britain’s Vaccines Taskforce has said.
+
+    Dr. Clive Dix, who played a key role in helping pharmaceutical firms create the COVID-19 vaccines, told LBC radio on Jan. 16: “The Omicron variant is a relatively mild virus. And to just keep vaccinating people and thinking of doing it again to protect the population is, in my view, now a waste of time.”
+
+    Dix said the focus now should be on protecting vulnerable people, such as those over 60, 2 percent of whom remain unvaccinated."
+  url: https://www.theepochtimes.com/waste-of-time-to-keep-vaccinating-people-ex-head-of-uk-vaccine-taskforce_4216302.html
+  authors:
+    - Clive Dix
+    - The Epoch Times
+  tags:
+    - vaccine mandates
+    - political tyrany
+    - vaccine safety
+-
+  id: nTxaxm61
+  type: news article
+  title: End mass jabs and live with Covid, says ex-head of vaccine taskforce
+  date: 2022-01-15
+  description: "
+    Covid should be treated as an endemic virus similar to flu, and ministers should end mass-vaccination after the booster campaign, the former chairman of the UK’s vaccine taskforce has said.
+
+    With health chiefs and senior Tories also lobbying for a post-pandemic plan for a straining NHS, Dr Clive Dix called for a major rethink of the UK’s Covid strategy, in effect reversing the approach of the past two years and returning to a “new normality”.
+
+    “We need to analyse whether we use the current booster campaign to ensure the vulnerable are protected, if this is seen to be necessary,” he said. “Mass population-based vaccination in the UK should now end.”"
+  url: https://www.theguardian.com/world/2022/jan/08/end-mass-jabs-and-live-with-covid-says-ex-head-of-vaccine-taskforce
+  authors:
+    - Clive Dix
+    - The Guardian
+  tags:
+    - vaccine mandates
+    - political tyrany
+    - uk
