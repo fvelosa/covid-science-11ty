@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 
   // filters a collection by slug
   eleventyConfig.addFilter("getById", function (collection, id) {
-    console.log(collection)
+    // console.log(collection)
     return collection.find(item => item.data && item.data.assetId === id);
   })
 
@@ -121,7 +121,7 @@ module.exports = function (eleventyConfig) {
       })
     });
 
-    console.log(clipsSet.length);
+    // console.log(clipsSet.length);
 
     return Array.from(clipsSet);
   });
