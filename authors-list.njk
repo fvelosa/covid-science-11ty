@@ -12,5 +12,5 @@ layout: layouts/home.njk
 {% for author in collections.authorList | sort(0, 0, author) %}
   {% set authorUrl %}/authors/{{ author | slug }}/{% endset %}
   {# <span class="author is-info">{{ author }}<span/> #}
-  <div><a href="{{ authorUrl | url }}" class="post-author">{{ author }}</a><div/>
+  <div><a href="{{ authorUrl }}" class="post-author">{{ author }}</a><div/>
 {% endfor %}

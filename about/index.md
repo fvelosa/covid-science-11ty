@@ -7,6 +7,6 @@ eleventyNavigation:
   order: 8
 ---
 
-Computer science professional born in a socialist country, now living in post-fascist one that is always aspiring for communism.
+Computer science professional born in a socialist country now living in a medical and political tirany.
 
 More coming soon...

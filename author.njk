@@ -1,0 +1,28 @@
+---
+pagination:
+  data: collections.authorList
+  size: 1
+  alias: author
+  addAllPagesToCollections: true
+  before: function(d) { console.log('========================', d); return d }
+layout: layouts/home.njk
+eleventyComputed:
+  title: Author “{{ author }}”
+permalink: /authors/{{ author | slug }}/
+---
+<h1>Author “{{ author }}”</h1>
+{% set postslist = (collections.posts | filterAuthors(author)) %}
+{% include "postslist.njk" %}
+
+{% set postslist = (collections.clipsList | filterAuthors(author)) %}
+<h2>Clips</h2>
+{% include "postslist.njk" %}
+
+{# <h2>Links</h2>
+
+{% set postslist = (collections.all) %}
+{% include "postslist.njk" %} #}
+
+<p>See <a href="{{ '/authors/' | url }}">all authors</a>.</p>
+
+<p>Page: {{pagination.pageNumber}} <a href="{{ pagination.href.previous }}">Previous</a> <a href="{{ pagination.href.next }}">Next</a></p>

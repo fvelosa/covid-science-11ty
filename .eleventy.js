@@ -50,6 +50,16 @@ module.exports = function (eleventyConfig) {
     return array.filter(item => tags.some(tag => item.data.tags.includes(tag)))
   });
 
+  // Return all elements that contain at least one author
+  eleventyConfig.addFilter("filterAuthors", (array, author) => {
+    (array.forEach(i => console.log(`${i.data && i.data.title || i.title}\n`)))
+    if (!Array.isArray(array)) return array
+    const filteredArray = array.filter(item => item.data && item.data.authors && item.data.authors.includes(author) || item.authors && item.authors.includes(author))
+
+    console.log(filteredArray)
+    return filteredArray
+  });
+
   // Return the smallest number argument
   eleventyConfig.addFilter("min", (...numbers) => {
     return Math.min.apply(null, numbers);
@@ -65,7 +75,6 @@ module.exports = function (eleventyConfig) {
 
   // filters a collection by slug
   eleventyConfig.addFilter("getById", function (collection, id) {
-    // console.log(collection)
     return collection.find(item => item.data && item.data.assetId === id);
   })
 
@@ -77,13 +86,25 @@ module.exports = function (eleventyConfig) {
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = new Set();
+
+    // Add tags from posts
     collection.getAll().forEach(item => {
       (item.data.tags || []).forEach(tag => tagSet.add(tag));
-      (item.data.timestamps || []).forEach(timestamp => (timestamp[3] || []).forEach(tag => tagSet.add(tag)))
+
+      // Add tags from clips in posts
+      const tagsIndex = 3;
+      (item.data.timestamps || []).forEach(timestamp => (timestamp[tagsIndex] || []).forEach(tag => tagSet.add(tag)))
     });
+
+    // Add authors from posts to tagsList
     collection.getAll().forEach(item => {
       (item.data.authors || []).forEach(tag => tagSet.add(tag));
     });
+
+    // Adds authors and tags from links to tagsList
+    const links = collection.getAll()[0].data.links
+    links.forEach(link => (link.tags || []).forEach(tag => tagSet.add(tag)));
+    links.forEach(link => (link.authors || []).forEach(author => tagSet.add(author)));
 
     return filterTagList([...tagSet]);
   });
@@ -91,14 +112,20 @@ module.exports = function (eleventyConfig) {
   // Create an array of all authors
   eleventyConfig.addCollection("authorList", function (collection) {
     let authorSet = new Set();
+
+    // Add post authors to authors list
     collection.getAll().forEach(item => {
       (item.data.authors || []).forEach(author => authorSet.add(author));
     });
 
-    return Array.from(authorSet);
+    // Adds links authors to authors list
+    const links = collection.getAll()[0].data.links
+    links.forEach(link => (link.authors || []).forEach(author => authorSet.add(author)));
+
+    return Array.from(authorSet).sort();
   });
 
-  // Create an array of all authors
+  // Create a collection with all links
   eleventyConfig.addCollection("linksList", function (collection) {
     const links = collection.getAll()[0].data.links
 
@@ -111,7 +138,7 @@ module.exports = function (eleventyConfig) {
     return Array.from(linkSet);
   });
 
-  // Create an array of posts by topic
+  // Create a collection of clips for each video
   eleventyConfig.addCollection("clipsList", function (collection) {
     let clipsSet = new Set();
 
@@ -120,8 +147,6 @@ module.exports = function (eleventyConfig) {
         clipsSet.add({ data: { ...item.data, originalTitle: item.data.title, originalTags: item.data.tags, tags: timestamp[3] || item.data.tags, title: timestamp[2], start: timestamp[0] } })
       })
     });
-
-    // console.log(clipsSet.length);
 
     return Array.from(clipsSet);
   });

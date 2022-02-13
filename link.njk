@@ -1,14 +1,33 @@
 ---
 pagination:
-  data: links
+  data: collections.linksList
   size: 1
   alias: link
   addAllPagesToCollections: true
 layout: layouts/home.njk
 eleventyComputed:
-  title: '{{ link.title }}'
-permalink: /links/{{ link.id | slug }}-{{ link.title | slug }}/
+  title: Link “{{ link.title }}”
+permalink: /links/{{ link.title | slug }}/
 ---
-<h1>Author “{{ link.url }}”</h1>
+<h1>Link “{{ link.title }}”</h1>
+{#
+{% set postslist = (collections.posts | filterAuthors(author)) %}
+{% include "postslist.njk" %}
 
-<p>See <a href="{{ '/clips/' | url }}">all clips</a>.</p>
+<h2>Clips</h2>
+
+{% set postslist = (collections.clipsList | filterAuthors(author)) %}
+{% include "postslist.njk" %}
+
+<h2>Links</h2> #}
+
+{# {% set postslist = (collections.all | filterAuthors(author)) %}
+{% include "postslist.njk" %}
+
+<p>See <a href="{{ '/authors/' | url }}">all authors</a>.</p>
+
+<p>{{author}}</p> #}
+
+<p>Page: {{pagination.pageNumber}} </p>
+
+<p><a href="{{ pagination.href.previous }}">Previous</a> <a href="{{ pagination.href.next }}">Next</a></p>

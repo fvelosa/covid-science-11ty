@@ -15,6 +15,33 @@
     - world council for health
     - Tess Lawrie
 -
+  id: 07_kBl-2
+  type: government agency
+  title: Yellow Card reporting site
+  url: https://yellowcard.mhra.gov.uk
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+    - uk
+-
+  id: VItXTKXR
+  type: government agency
+  title: Coronavirus (COVID-19) vaccines adverse reactions
+  url: https://www.gov.uk/government/publications/coronavirus-covid-19-vaccine-adverse-reactions
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+    - uk
+-
+  id: Yx7gZ8NN
+  type: government agency
+  title: EudraVigilance
+  url: https://www.ema.europa.eu/en/human-regulatory/research-development/pharmacovigilance/eudravigilance
+  tags:
+    - vaccine adverse events
+    - vaccine safety
+    - eu
+-
   id: 9fw7fggq
   type: Author
   title: Voice For Science and Solidarity
@@ -65,7 +92,7 @@
   title: The Unity Project
   url: https://unityprojectonline.com
   authors:
-    - Peter McCullough
+    - Peter Mccullough
     - Robert Malone
   tags:
     - vaccine mandates
@@ -179,3 +206,88 @@
     - vaccine mandates
     - political tyrany
     - uk
+-
+  id: bxQUmnw5
+  type: news article
+  title: 'Joe Rogan: Four claims from his Spotify podcast fact-checked'
+  date: 2022-02-01
+  description: "
+    Joe Rogan has been criticised for helping spread misinformation on his podcast.
+
+    Spotify reportedly paid $100m (£75m) in 2020 for rights to The Joe Rogan Experience, which is the streaming service's top podcast. It is reportedly downloaded almost 200 million times a month.
+
+    On the show, the US broadcaster hosts a wide variety of guests who discuss their views on a range of topics - but some episodes have featured false and misleading claims.
+    "
+  url: https://www.bbc.com/news/60199614
+  authors:
+    - BBC
+  tags:
+    - vaccine mandates
+    - censorship
+    - joe rogan
+    - spotify
+-
+  id: nQGx3PcA
+  type: paper
+  title: 'A LITERATURE REVIEW AND META-ANALYSIS OF THE EFFECTS OF LOCKDOWNS ON COVID-19 MORTALITY'
+  date: 2022-01-30
+  description: "
+    This systematic review and meta-analysis are designed to determine whether there is empirical evidence to support the belief that “lockdowns” reduce COVID-19 mortality. Lockdowns are defined as the imposition of at least one compulsory, non-pharmaceutical intervention (NPI). NPIs are any government mandate that directly restrict peoples’ possibilities, such as policies that limit internal movement, close schools and businesses, and ban international travel. This study employed a systematic search and screening procedure in which 18,590 studies are identified that could potentially address the belief posed. After three levels of screening, 34 studies ultimately qualified. Of those 34 eligible studies, 24 qualified for inclusion in the meta-analysis. They were separated into three groups: lockdown stringency index studies, shelter-in-place- order (SIPO) studies, and specific NPI studies. An analysis of each of these three groups support the conclusion that lockdowns have had little to no effect on COVID-19 mortality. More specifically, stringency index studies find that lockdowns in Europe and the United States only reduced COVID-19 mortality by 0.2% on average. SIPOs were also ineffective, only reducing COVID-19 mortality by 2.9% on average. Specific NPI studies also find no broad-based evidence of noticeable effects on COVID-19 mortality.
+    While this meta-analysis concludes that lockdowns have had little to no public health effects, they have imposed enormous economic and social costs where they have been adopted. In consequence, lockdown policies are ill-founded and should be rejected as a pandemic policy instrument.
+    "
+  url: https://sites.krieger.jhu.edu/iae/files/2022/01/A-Literature-Review-and-Meta-Analysis-of-the-Effects-of-Lockdowns-on-COVID-19-Mortality.pdf
+  authors:
+    - The Johns Hopkins Institute
+  tags:
+    - lockdown
+    - non-pharmaceutical interventions
+    - mortality
+    - systematic review
+    - meta-analysis
+-
+  id: fooTkRN2
+  type: news media
+  title: 'A autópsia do pequeno Rodrigo: a verdade da mentira ou a confiança nula'
+  date: 2022-02-03
+  description: "
+    As Autoridades de Saúde – englobemos aqui a Direcção-Geral da Saúde (DGS), administrações hospitalares e institutos públicos deste sector, entre os quais o Instituto Nacional de Saúde Dr. Ricardo Jorge (INSA), o Infarmed e o Instituto de Medicina Legal – que nos garantem agora que a trágica morte do pequeno Rodrigo nada teve a ver com a vacina contra a covid-19, são as mesmas que nos asseguraram que uma bebé prematura, nascida no início do ano passado no Hospital Garcia de Orta, com uma hemorragia intraventricular de grau 4, afinal teve como causa de óbito as infecções por SARS-CoV-2, à conta de um simples teste positivo.
+    Que se saiba, as tais Autoridades de Saúde não se mostraram então tão zelosas em autópsias detalhadas para confirmar se a morte foi por covid-19 ou, enfim, por uma hemorragia intraventricular de grau 4. Não sou médico, mas nem é preciso ser especialista para desconfiar. Mas, neste caso, não interessou averiguar. Nem sobre esta morte, nem sobre a de um outro bebé com menos de 1 anos, nem de outra de uma criança de 4 anos, também com graves comorbilidades, nem a de uma jovem de 19 anos que sofria de síndrome de Dravet. Nesta última situação, a DGS até veio a correr informar que a jovem não estava vacinada. Agora, com o pequeno Rodrigo saiu-se com escrúpulos, e nada avançou, a não ser negar que não foi a vacina. Há escrúpulos convenientes.
+    "
+  url: https://paginaum.pt/2022/02/03/a-autopsia-do-pequeno-rodrigo-a-verdade-da-mentira-ou-a-confianca-nula/?fbclid=IwAR1nunz0eZd0LEGQSpAbjYgnSCLw-FCbuqqJXldEgv73hxxuFygWZhRGesU
+  authors:
+    - Página Um
+    - Pedro Almeida Vieira
+  tags:
+    - vaccine mandates
+    - political tyrany
+    - vaccine safety
+-
+  id: huIOpeQT
+  type: news media
+  title: 'Lockdowns Fail: They Do Not Control the Virus'
+  date: 2021-07-25
+  description: "
+    The use of universal lockdowns in the event of the appearance of a new pathogen has no precedent. It has been a science experiment in real-time, with most of the human population used as lab rats. The question is whether and to what extent lockdowns worked to control the virus in a way that is scientifically verifiable. Based on the following studies, the answer is no and for a variety of reasons: bad data, no correlations, no causal demonstration, anomalous exceptions, and so on. There is no relationship between lockdowns (or whatever else people want to call them to mask their true nature) and virus control.
+    "
+  url: https://brownstone.org/articles/lockdowns-fail-they-do-not-control-the-virus
+  authors:
+    - Brownstone institute
+  tags:
+    - political tyrany
+    - lockdowns
+    - non-medical interventions
+-
+  id: poKGft_5
+  type: news media
+  title: 'Lockdowns Did Not Save Lives, Concludes Meta-Analysis'
+  date: 2022-02-10
+  description: "
+    Restricted freedoms in the face of a new pathogen. It’s fair to say that we panicked in those fateful spring months of 2020. Ever since, the heated conversations, angered populations, lost friendships, and moralistic battles have split societies down the middle.
+    "
+  url: https://www.theepochtimes.com/lockdowns-did-not-save-lives-concludes-meta-analysis_4270221.html
+  authors:
+    - The Epoch Times
+  tags:
+    - political tyrany
+    - lockdowns
+    - non-medical interventions

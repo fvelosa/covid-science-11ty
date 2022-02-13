@@ -8,7 +8,7 @@ layout: layouts/home.njk
 ---
 <h1>Links</h1>
 
-{% for link in links %}
+{% for link in collections.linksList | sort(0,0,'title') %}
   {% set linkUrl %}{{ link.url }}/{% endset %}
   <h5>{{ link.title }} - <a href="{{ linkUrl }}">{{ linkUrl }}</a><h5/>
 {% endfor %}

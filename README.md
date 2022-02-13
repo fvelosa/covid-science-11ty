@@ -1,3 +1,31 @@
+# Generate ramdom IDs
+
+[https://www.345tool.com/generator/random-id-generator](https://www.345tool.com/generator/random-id-generator)
+
+
+* `npm run rename`: Rename files with date and id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # eleventy-base-blog
 
 A starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
